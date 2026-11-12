@@ -298,6 +298,7 @@ public static class UiRenderer
         try
         {
             Directory.CreateDirectory(dir);
+            Studio.ApplyHotkeys(false);
             foreach (var theme in new[] { "dark", "light" })
             {
                 Studio.Settings.Theme = theme;

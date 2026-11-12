@@ -4,7 +4,7 @@
         xmlns:v="clr-namespace:FranCaptureStudio.Views"
         xmlns:l="clr-namespace:FranCaptureStudio"
         xmlns:e="clr-namespace:FranCaptureStudio.Editor"
-        Title="Fran Capture Studio – Editor" Width="1180" Height="780" MinWidth="760" MinHeight="480"
+        Title="Fran Capture Studio – Editor" Width="1180" Height="780" MaxWidth="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}" MinWidth="760" MinHeight="480"
         WindowStartupLocation="CenterScreen">
   <Grid>
     <Grid.RowDefinitions>
