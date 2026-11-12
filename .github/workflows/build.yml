@@ -36,7 +36,10 @@ jobs:
 
       - name: Compilar, probar, publicar y crear el instalador
         shell: pwsh
-        run: ./build/build.ps1
+        run: |
+          New-Item -ItemType Directory -Force artifacts | Out-Null
+          ./build/build.ps1 *>&1 | Tee-Object artifacts\build.log
+          if (-not (Test-Path artifacts\build-ok.txt)) { Write-Error "La compilación o las pruebas fallaron"; exit 1 }
 
       - name: Capturas de la interfaz
         shell: pwsh
@@ -84,4 +87,10 @@ jobs:
             artifacts/smoke-results.txt
             artifacts/smoke-app.log
             artifacts/install.log
+            artifacts/build.log
           if-no-files-found: warn
+
+      - name: Diagnóstico compacto
+        if: always()
+        shell: pwsh
+        run: ./build/ci-diagnose.ps1

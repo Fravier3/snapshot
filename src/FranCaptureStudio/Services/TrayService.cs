@@ -30,7 +30,7 @@ public sealed class TrayService : IDisposable
     {
         try
         {
-            var res = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/Assets/app.ico"));
+            var res = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/FranCaptureStudio;component/Assets/app.ico"));
             if (res != null) using (res.Stream) return new SD.Icon(res.Stream, WF.SystemInformation.SmallIconSize);
         }
         catch { }

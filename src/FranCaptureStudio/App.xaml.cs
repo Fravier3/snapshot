@@ -73,13 +73,16 @@ public static class Studio
         var app = Application.Current;
         if (app == null) return;
         bool dark = Settings.Theme == "dark";
-        var dict = new ResourceDictionary { Source = new Uri($"pack://application:,,,/Themes/{(dark ? "Dark" : "Light")}.xaml") };
+        var dict = new ResourceDictionary { Source = new Uri($"pack://application:,,,/FranCaptureStudio;component/Themes/{(dark ? "Dark" : "Light")}.xaml") };
         var merged = app.Resources.MergedDictionaries;
-        merged[0] = dict;
+        static bool IsPalette(ResourceDictionary d) => d.Source != null && (d.Source.OriginalString.EndsWith("Themes/Dark.xaml", StringComparison.OrdinalIgnoreCase) || d.Source.OriginalString.EndsWith("Themes/Light.xaml", StringComparison.OrdinalIgnoreCase));
         try { app.ThemeMode = dark ? ThemeMode.Dark : ThemeMode.Light; } catch (Exception ex) { Log.Error("Tema", ex); }
-        // ThemeMode añade sus propios diccionarios; los estilos propios deben quedar al final para tener prioridad.
-        var styles = merged.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.EndsWith("Styles.xaml", StringComparison.OrdinalIgnoreCase));
-        if (styles != null && merged[^1] != styles) { merged.Remove(styles); merged.Add(styles); }
+        // ThemeMode añade sus propios diccionarios: la paleta y los estilos propios se recolocan al final para tener prioridad.
+        foreach (var old in merged.Where(IsPalette).ToList()) merged.Remove(old);
+        var styles = merged.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.EndsWith("Themes/Styles.xaml", StringComparison.OrdinalIgnoreCase));
+        if (styles != null) merged.Remove(styles);
+        merged.Add(dict);
+        merged.Add(styles ?? new ResourceDictionary { Source = new Uri("pack://application:,,,/FranCaptureStudio;component/Themes/Styles.xaml") });
         if (Tray != null) Tray.DarkMenu = dark;
         foreach (Window w in app.Windows) ThemeWindow(w);
     }

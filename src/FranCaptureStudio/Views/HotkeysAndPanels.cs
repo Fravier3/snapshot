@@ -193,7 +193,7 @@ public sealed class FirstRunWindow : StudioWindow
     void Build()
     {
         var s = Studio.Settings;
-        var logo = new Image { Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/Assets/icon-512.png")), Width = 56, Height = 56, HorizontalAlignment = HorizontalAlignment.Left };
+        var logo = new Image { Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/FranCaptureStudio;component/Assets/icon-512.png")), Width = 56, Height = 56, HorizontalAlignment = HorizontalAlignment.Left };
         RenderOptions.SetBitmapScalingMode(logo, BitmapScalingMode.HighQuality);
         var title = Form.Text("Te damos la bienvenida a Fran Capture Studio", "PageTitle"); title.Margin = new Thickness(0, 12, 0, 4); title.TextWrapping = TextWrapping.Wrap;
         var keyText = new TextBlock { FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 12, 0), MinWidth = 90, TextAlignment = TextAlignment.Right };

@@ -15,7 +15,7 @@
     <Border Background="{DynamicResource NavBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,1,0">
       <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="16,18,12,16">
-          <Image Source="pack://application:,,,/Assets/icon-512.png" Width="34" Height="34" RenderOptions.BitmapScalingMode="HighQuality"/>
+          <Image Source="pack://application:,,,/FranCaptureStudio;component/Assets/icon-512.png" Width="34" Height="34" RenderOptions.BitmapScalingMode="HighQuality"/>
           <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
             <TextBlock Text="Fran Capture" FontFamily="{StaticResource UiDisplayFont}" FontSize="15" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}"/>
             <TextBlock Text="STUDIO" FontSize="10" FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}"/>

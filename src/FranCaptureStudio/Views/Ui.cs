@@ -22,7 +22,7 @@ public class StudioWindow : Window
         UseLayoutRounding = true;
         SnapsToDevicePixels = true;
         TextOptions.SetTextFormattingMode(this, TextFormattingMode.Display);
-        try { Icon = System.Windows.Media.Imaging.BitmapFrame.Create(new Uri("pack://application:,,,/Assets/app.ico")); } catch { }
+        try { Icon = System.Windows.Media.Imaging.BitmapFrame.Create(new Uri("pack://application:,,,/FranCaptureStudio;component/Assets/app.ico")); } catch { }
     }
 
     protected override void OnSourceInitialized(EventArgs e)

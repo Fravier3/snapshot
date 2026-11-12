@@ -33,6 +33,7 @@ if ($LASTEXITCODE -ne 0) { throw "Falló la publicación" }
 Copy-Item docs\MANUAL.md, README.md -Destination publish -ErrorAction SilentlyContinue
 if (-not (Test-Path publish\ffmpeg\ffmpeg.exe)) { throw "La publicación no contiene ffmpeg\ffmpeg.exe" }
 
+New-Item -ItemType Directory -Force artifacts | Out-Null
 if (-not $SkipInstaller) {
   $iscc = @("${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe", "$env:ProgramFiles\Inno Setup 6\ISCC.exe", "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1
   if (-not $iscc) { $cmd = Get-Command iscc -ErrorAction SilentlyContinue; if ($cmd) { $iscc = $cmd.Source } }
@@ -45,3 +46,4 @@ if (-not $SkipInstaller) {
   "$hash  FranCaptureStudio-Setup.exe" | Set-Content artifacts\FranCaptureStudio-Setup.exe.sha256 -Encoding ASCII
   Write-Host ("Instalador: {0} ({1:N1} MB)  SHA-256 {2}" -f $setup.FullName, ($setup.Length / 1MB), $hash) -ForegroundColor Green
 }
+"ok" | Set-Content artifacts\build-ok.txt
