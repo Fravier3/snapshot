@@ -1,0 +1,1 @@
+OMITIDA Global_hotkey_registers_fires_and_unregisters: el registro y el conflicto se comprobaron, pero este entorno no entrega pulsaciones sintéticas al sistema (sin escritorio de entrada interactivo); el disparo real se verifica en la prueba de humo o manualmente
