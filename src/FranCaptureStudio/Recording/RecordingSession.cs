@@ -437,6 +437,9 @@ public sealed class RecordingSession
         g.SmoothingMode = SD2.SmoothingMode.None;
     }
 
+    /// <summary>Solo pruebas: simula un cierre abrupto del codificador.</summary>
+    internal void TestKillEncoder() { try { _ffmpeg?.Kill(true); } catch { } }
+
     /// <summary>Detiene la captura y deja el video temporal cerrado correctamente. No genera el archivo final.</summary>
     public async Task StopCaptureAsync()
     {

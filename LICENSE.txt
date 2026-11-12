@@ -1,0 +1,11 @@
+Fran Capture Studio
+Copyright (c) 2026 Desarrollos Francisco J Vazquez Santiago. Todos los derechos reservados.
+
+Este software se entrega al titular para su uso, copia e instalación en sus equipos.
+SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUIDAS, ENTRE OTRAS,
+LAS GARANTÍAS DE COMERCIABILIDAD E IDONEIDAD PARA UN FIN DETERMINADO. EN NINGÚN CASO LOS AUTORES
+SERÁN RESPONSABLES DE RECLAMACIONES, DAÑOS U OTRAS RESPONSABILIDADES DERIVADAS DEL USO DEL SOFTWARE.
+
+Este producto incluye componentes de terceros con sus propias licencias; consulte
+THIRD-PARTY-NOTICES.md. En particular, FFmpeg se distribuye como ejecutable independiente
+bajo la licencia LGPL v2.1 o posterior.

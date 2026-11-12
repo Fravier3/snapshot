@@ -17,8 +17,6 @@
     <NoWarn>$(NoWarn);WPF0001;CA1416</NoWarn>
     <AssemblyTitle>Fran Capture Studio</AssemblyTitle>
     <Description>Capturas, grabaciones y productividad para Windows 11</Description>
-    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
-    <ForceDesignerDpiUnaware>false</ForceDesignerDpiUnaware>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
@@ -35,5 +33,11 @@
     <Using Remove="System.Windows.Forms" />
     <Using Remove="System.Drawing" />
     <InternalsVisibleTo Include="FranCaptureStudio.WinTests" />
+    <!-- FFmpeg (compilación LGPL) descargado por build/fetch-ffmpeg.ps1; se distribuye como ejecutable independiente -->
+    <Content Include="..\..\third_party\ffmpeg\ffmpeg.exe" Link="ffmpeg\ffmpeg.exe" Condition="Exists('..\..\third_party\ffmpeg\ffmpeg.exe')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\third_party\ffmpeg\VERSION.txt" Link="ffmpeg\VERSION.txt" Condition="Exists('..\..\third_party\ffmpeg\VERSION.txt')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\third_party\ffmpeg\LICENSE.txt" Link="ffmpeg\LICENSE.txt" Condition="Exists('..\..\third_party\ffmpeg\LICENSE.txt')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\THIRD-PARTY-NOTICES.md" Link="THIRD-PARTY-NOTICES.md" Condition="Exists('..\..\THIRD-PARTY-NOTICES.md')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\LICENSE.txt" Link="LICENSE.txt" Condition="Exists('..\..\LICENSE.txt')" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

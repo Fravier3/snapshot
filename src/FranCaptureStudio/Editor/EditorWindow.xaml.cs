@@ -1,4 +1,5 @@
 using System.IO;
+using Path = System.Windows.Shapes.Path;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;

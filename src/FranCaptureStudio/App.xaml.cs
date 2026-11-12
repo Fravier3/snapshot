@@ -27,6 +27,7 @@ public static class Studio
     public static MainWindow? Main { get; set; }
     public static event Action? SettingsChanged;
     public static bool IsExiting { get; private set; }
+    internal static bool IsExitingForRender { set => IsExiting = value; }
     public static string Version => typeof(Studio).Assembly.GetName().Version?.ToString(3) ?? "1.0.0";
 
     /// <summary>Inicializa los servicios sin interfaz (también se usa en las pruebas de integración).</summary>

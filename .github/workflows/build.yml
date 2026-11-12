@@ -1,0 +1,87 @@
+name: Compilar e instalar (Windows)
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    name: Compilación, pruebas e instalador
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Inno Setup
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup --no-progress -y }
+
+      - name: Resolución de pantalla del runner
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          Add-Type -AssemblyName System.Windows.Forms
+          [System.Windows.Forms.SystemInformation]::VirtualScreen | Format-List
+          Get-WindowsCapability -Online -Name "Language.OCR*" -ErrorAction SilentlyContinue | Where-Object State -eq Installed | Select-Object Name
+
+      - name: Compilar, probar, publicar y crear el instalador
+        shell: pwsh
+        run: ./build/build.ps1
+
+      - name: Capturas de la interfaz
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $env:FCS_DATA_DIR = Join-Path $env:TEMP "fcs-render"
+          $out = Join-Path (Get-Location) "artifacts\ui"
+          $p = Start-Process publish\FranCaptureStudio.exe -ArgumentList "--render-ui", "`"$out`"" -PassThru
+          if (-not $p.WaitForExit(180000)) { $p.Kill(); Write-Warning "render-ui no terminó a tiempo" }
+          Get-ChildItem $out -ErrorAction SilentlyContinue | Select-Object Name, Length
+          if (Test-Path "$out\error.txt") { Get-Content "$out\error.txt" }
+          if (Test-Path "$env:FCS_DATA_DIR\Local\logs\app.log") { Get-Content "$env:FCS_DATA_DIR\Local\logs\app.log" -Tail 60 }
+
+      - name: Prueba de humo del instalador (instalar, F9, capturar, desinstalar)
+        shell: pwsh
+        run: ./build/smoke-test.ps1
+
+      - name: Resumen
+        if: always()
+        shell: pwsh
+        run: |
+          "## Fran Capture Studio" >> $env:GITHUB_STEP_SUMMARY
+          if (Test-Path artifacts\FranCaptureStudio-Setup.exe.sha256) { '```' >> $env:GITHUB_STEP_SUMMARY; Get-Content artifacts\FranCaptureStudio-Setup.exe.sha256 >> $env:GITHUB_STEP_SUMMARY; '```' >> $env:GITHUB_STEP_SUMMARY }
+          if (Test-Path artifacts\smoke-results.txt) { "### Prueba de humo" >> $env:GITHUB_STEP_SUMMARY; '```' >> $env:GITHUB_STEP_SUMMARY; Get-Content artifacts\smoke-results.txt >> $env:GITHUB_STEP_SUMMARY; '```' >> $env:GITHUB_STEP_SUMMARY }
+          Get-ChildItem $env:TEMP -Filter "fcs-tests-*" -Directory -ErrorAction SilentlyContinue | ForEach-Object { if (Test-Path "$($_.FullName)\omitidas.txt") { Copy-Item "$($_.FullName)\omitidas.txt" artifacts\test-results\omitidas.txt -Force; "### Pruebas omitidas" >> $env:GITHUB_STEP_SUMMARY; Get-Content "$($_.FullName)\omitidas.txt" >> $env:GITHUB_STEP_SUMMARY } }
+
+      - name: Publicar instalador
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: FranCaptureStudio-Setup
+          path: |
+            artifacts/FranCaptureStudio-Setup.exe
+            artifacts/FranCaptureStudio-Setup.exe.sha256
+          if-no-files-found: warn
+
+      - name: Publicar resultados de pruebas y capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-y-capturas
+          path: |
+            artifacts/test-results
+            artifacts/ui
+            artifacts/smoke-results.txt
+            artifacts/smoke-app.log
+            artifacts/install.log
+          if-no-files-found: warn

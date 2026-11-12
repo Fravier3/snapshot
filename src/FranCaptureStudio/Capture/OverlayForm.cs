@@ -119,7 +119,7 @@ public sealed class OverlayForm : WF.Form
 
     bool _closing;
 
-    double Scale => Native.ScaleAt(_mouse.X + _vb.X, _mouse.Y + _vb.Y);
+    new double Scale => Native.ScaleAt(_mouse.X + _vb.X, _mouse.Y + _vb.Y);
 
     // ---------- Entrada ----------
 
