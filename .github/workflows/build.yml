@@ -7,7 +7,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write   # solo para guardar las capturas de la interfaz en docs/capturas
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   windows:
@@ -56,6 +60,23 @@ jobs:
       - name: Prueba de humo del instalador (instalar, F9, capturar, desinstalar)
         shell: pwsh
         run: ./build/smoke-test.ps1
+
+      - name: Guardar capturas de la interfaz en el repositorio
+        if: always() && github.event_name == 'push'
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          if (-not (Test-Path artifacts\ui\ok.txt)) { Write-Host "Sin capturas nuevas"; exit 0 }
+          New-Item -ItemType Directory -Force docs\capturas | Out-Null
+          Copy-Item artifacts\ui\*.png docs\capturas -Force
+          if (Test-Path artifacts\smoke-results.txt) { Copy-Item artifacts\smoke-results.txt docs\capturas\prueba-de-humo.txt -Force }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/capturas
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) { Write-Host "Sin cambios"; exit 0 }
+          git commit -m "Capturas de la interfaz generadas en CI [skip ci]"
+          git push origin HEAD:${{ github.ref_name }}
 
       - name: Resumen
         if: always()
