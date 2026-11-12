@@ -13,7 +13,7 @@ Lo que no pudo ejecutarse está en «Pruebas manuales pendientes»; **nada de es
 | Descarga de FFmpeg 8.1 LGPL con verificación SHA-256 | ✅ |
 | Publicación autocontenida (ReadyToRun) | ✅ |
 | Instalador Inno Setup `FranCaptureStudio-Setup.exe` | ✅ ≈ 103 MB · **sin firma digital** (`NotSigned`) |
-| Artefacto `FranCaptureStudio-Setup` en GitHub Actions | ✅ (ejecución n.º 8, commit `ce6ea3a`) |
+| Artefacto `FranCaptureStudio-Setup` en GitHub Actions | ✅ (ejecución n.º 9, commit `50168ec`) |
 
 ## Pruebas automatizadas ejecutadas
 
@@ -34,7 +34,7 @@ Lo que no pudo ejecutarse está en «Pruebas manuales pendientes»; **nada de es
   - QR (ida y vuelta), combinador, conversor (JPG, BMP, GIF, TIFF, WebP), eliminar fondo por color, numeración de pasos, PDF/Markdown/HTML del reporte.
   - Atajos: registro, detección de «en uso por otra aplicación», liberación, diálogo «Configurar tecla» con conflicto y alternativas.
   - Todas las páginas se construyen en dos tamaños de ventana, ambos temas y ambos idiomas.
-- **Prueba de humo sobre el instalador real — 29 comprobaciones correctas, 1 no verificada** (ver `capturas/prueba-de-humo.txt`):
+- **Prueba de humo sobre el instalador real — 28 comprobaciones correctas, 1 no verificada** (ver `capturas/prueba-de-humo.txt`):
   instalación silenciosa, archivos, accesos directos, versión, sin inicio automático no pedido, arranque desde el acceso
   directo, instancia única, cerrar a bandeja, captura guardada (1024×768), SQLite, restaurar ventana, salir completamente,
   persistencia, desinstalación que conserva capturas y configuración.
@@ -44,9 +44,10 @@ Lo que no pudo ejecutarse está en «Pruebas manuales pendientes»; **nada de es
 El runner de CI **no entrega de forma fiable pulsaciones sintéticas** al sistema. Por eso:
 
 - «F9 abre el selector con la app en la bandeja» (prueba de humo) quedó como **NO VERIFICADO**.
-- Las dos pruebas de integración que disparan un atajo de verdad se marcan como *omitidas* cuando la pulsación no llega
-  (ver `capturas/pruebas-omitidas.txt`). En una de las ejecuciones la pulsación sí llegó y la prueba «la tecla configurada abre
-  el selector» pasó; no es un resultado repetible en ese entorno.
+- De las dos pruebas de integración que disparan un atajo de verdad, «la tecla configurada abre el selector de captura»
+  **pasó** en las ejecuciones n.º 5 y n.º 9 (la pulsación llegó con `keybd_event` tras fallar `SendInput`), y «el atajo se
+  dispara y deja de dispararse al liberarlo» quedó *omitida* porque la pulsación no llegó (ver `capturas/pruebas-omitidas.txt`).
+  Es un comportamiento del entorno, no repetible de forma fiable.
 
 Lo que sí está verificado siempre: Windows acepta el registro, lo rechaza si la combinación está ocupada y lo libera al salir.
 **El disparo real de F9 con teclado físico debe comprobarse manualmente** (primera prueba de la lista siguiente).
@@ -60,7 +61,7 @@ Lo que sí está verificado siempre: Windows acepta el registro, lo rechaza si l
 | 3 | El acceso directo funciona | ✅ ejecutada |
 | 4 | La ventana se abre desde la bandeja | 🟡 restaurar con el proceso en bandeja ✅; clic en el icono: manual |
 | 5 | Los atajos se registran y desregistran | ✅ ejecutada |
-| 6 | Una tecla configurable abre el selector | 🟡 no repetible en CI; **manual** |
+| 6 | Una tecla configurable abre el selector | 🟡 pasó en proceso de pruebas (2 ejecuciones); con la app instalada y teclado físico: **manual** |
 | 7 | La selección de región funciona | 🟡 recorte y resultado ✅; arrastre con ratón: manual |
 | 8 | La imagen se guarda en la carpeta seleccionada | ✅ ejecutada |
 | 9 | Copiar al portapapeles | ✅ ejecutada |
