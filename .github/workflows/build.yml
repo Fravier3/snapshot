@@ -61,6 +61,20 @@ jobs:
         shell: pwsh
         run: ./build/smoke-test.ps1
 
+      - name: Publicar el instalador como release (descarga directa)
+        if: github.event_name == 'push'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "v1.0.0"
+          $notes = "Instalador de Fran Capture Studio para Windows 11 x64 (autocontenido). No está firmado digitalmente: SmartScreen puede avisar. SHA-256: $((Get-Content artifacts\FranCaptureStudio-Setup.exe.sha256) -split ' ' | Select-Object -First 1). Compilado desde ${{ github.sha }}."
+          gh release view $tag 2>$null | Out-Null
+          if ($LASTEXITCODE -ne 0) { gh release create $tag --title "Fran Capture Studio 1.0.0" --notes $notes --target ${{ github.sha }} }
+          else { gh release edit $tag --notes $notes }
+          gh release upload $tag artifacts\FranCaptureStudio-Setup.exe artifacts\FranCaptureStudio-Setup.exe.sha256 --clobber
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
       - name: Guardar capturas de la interfaz en el repositorio
         if: always() && github.event_name == 'push'
         continue-on-error: true
