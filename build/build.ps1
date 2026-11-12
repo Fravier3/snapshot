@@ -21,9 +21,9 @@ if ($LASTEXITCODE -ne 0) { throw "Falló la compilación" }
 if (-not $SkipTests) {
   New-Item -ItemType Directory -Force artifacts\test-results | Out-Null
   $env:FCS_FFMPEG = Join-Path $root "third_party\ffmpeg\ffmpeg.exe"
-  dotnet test tests\FranCapture.Core.Tests -c $Configuration --no-build --nologo --logger "trx;LogFileName=core.trx" --logger "console;verbosity=normal" --results-directory artifacts\test-results
+  dotnet test tests\FranCapture.Core.Tests -c $Configuration --nologo --logger "trx;LogFileName=core.trx" --logger "console;verbosity=minimal" --results-directory artifacts\test-results
   if ($LASTEXITCODE -ne 0) { throw "Fallaron las pruebas unitarias" }
-  dotnet test tests\FranCaptureStudio.WinTests -c $Configuration --no-build --nologo --logger "trx;LogFileName=windows.trx" --logger "console;verbosity=detailed" --results-directory artifacts\test-results
+  dotnet test tests\FranCaptureStudio.WinTests -c $Configuration --nologo --logger "trx;LogFileName=windows.trx" --logger "console;verbosity=normal" --results-directory artifacts\test-results
   if ($LASTEXITCODE -ne 0) { throw "Fallaron las pruebas de integración de Windows" }
 }
 

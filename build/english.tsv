@@ -1,0 +1,663 @@
+ (archivo no encontrado)	 (file not found)
+ · principal	 · primary
++ Flecha	+ Arrow
++ Texto	+ Text
+1 · Capturas	1 · Screenshots
+10 segundos	10 seconds
+100 (máxima)	100 (maximum)
+2 · Descripción	2 · Description
+3 segundos	3 seconds
+3 · Información técnica (opcional)	3 · Technical information (optional)
+3, 5 o 10 segundos	3, 5 or 10 seconds
+4 · Exportar	4 · Export
+5 segundos	5 seconds
+60 FPS exige más CPU; si el equipo no alcanza, se repiten fotogramas para mantener la duración real.	60 FPS needs more CPU; if the PC cannot keep up, frames are repeated to keep the real duration.
+Abrir	Open
+Abrir Fran Capture Studio	Open Fran Capture Studio
+Abrir carpeta de capturas	Open captures folder
+Abrir carpeta de datos	Open data folder
+Abrir carpeta de instalación	Open install folder
+Abrir carpeta del archivo	Open file location
+Abrir con la aplicación predeterminada	Open with the default app
+Abrir editor	Open editor
+Abrir el editor después de capturar	Open the editor after capturing
+Abrir el selector de región	Open the region selector
+Abrir en editor	Open in editor
+Abrir en el editor	Open in the editor
+Abrir en el navegador	Open in browser
+Abrir enlace	Open link
+Abrir imagen	Open image
+Abrir imagen…	Open image…
+Abrir imagen…  (Ctrl+O)	Open image…  (Ctrl+O)
+Abrir o restaurar Fran Capture Studio	Open or restore Fran Capture Studio
+Abrir proyecto editable	Open editable project
+Abrir proyecto editable…	Open editable project…
+Abrir ubicación en el Explorador	Show in File Explorer
+Abrir últimas capturas	Open recent captures
+Acceso rápido	Quick access
+Acciones	Actions
+Aceleración por hardware	Hardware acceleration
+Aceptar	OK
+Acerca de	About
+Acercar	Zoom in
+Activas · {0} guardadas	Active · {0} saved
+Adjuntar imágenes	Attach images
+Adjuntar imágenes…	Attach images…
+Agrega al menos un archivo.	Add at least one file.
+Agregar al reporte de errores	Add to bug report
+Agregar archivos a la biblioteca	Add files to the library
+Agregar archivos…	Add files…
+Agregar borde	Add border
+Agregar borde…	Add border…
+Agregar imágenes	Add images
+Agregar imágenes…	Add images…
+Agregar marca de agua…	Add watermark…
+Agregar regla	Add rule
+Agregar sombra	Add shadow
+Agregar texto	Add text
+Ajustar	Fit
+Al capturar	When capturing
+Al cerrar la ventana	When closing the window
+Al pulsar la X de la ventana	When clicking the window X
+Alejar	Zoom out
+Algunos atajos no están activos porque otra aplicación ya usa esa combinación:	Some shortcuts are not active because another app already uses that combination:
+Almacenamiento	Storage
+Alta	High
+Alternativas disponibles:	Available alternatives:
+Amplía la zona bajo el cursor	Magnify the area under the cursor
+Ancho máx.	Max width
+Ancho máximo	Maximum width
+Animación sin audio	Animation without audio
+Anotar en el editor (guarda para actualizar)	Annotate in the editor (save to update)
+Antes y después	Before and after
+Aparece como un círculo flotante que puedes mover; queda dentro del video.	Shown as a floating circle you can move; it is part of the video.
+Apariencia e idioma	Appearance and language
+Aplicar	Apply
+Aplicar recorte	Apply crop
+Aquí está el fallo	Here is the bug
+Archivo ▾	File ▾
+Archivos temporales y miniaturas eliminados.	Temporary files and thumbnails deleted.
+Arrastra para medir (Shift = recta) · Esc para salir	Drag to measure (Shift = straight) · Esc to exit
+Arrastra para mover · rueda para cambiar el tamaño	Drag to move · wheel to resize
+Arrastra para mover · rueda: tamaño · Ctrl+rueda: opacidad · doble clic: cerrar	Drag to move · wheel: size · Ctrl+wheel: opacity · double-click: close
+Arrastra para seleccionar una región · Esc para cancelar	Drag to select a region · Esc to cancel
+Arrastra sobre el video para dibujar la flecha	Drag over the video to draw the arrow
+Asígnales otra tecla.	Assign them another key.
+Atajos de teclado	Keyboard shortcuts
+Atajos no disponibles	Shortcuts unavailable
+Audio del sistema: desactivado	System audio: off
+Audio del sistema: grabando	System audio: recording
+Audio y cámara	Audio and camera
+Automatizaciones	Automations
+Automático (idioma de Windows)	Automatic (Windows language)
+Avisos	Alerts
+Añadir registro de la aplicación (saneado)	Add application log (sanitized)
+Aún no hay capturas. Pulsa «Capturar región» o tu atajo para empezar.	No captures yet. Click “Capture region” or press your shortcut to start.
+Aún no hay una región anterior. Captura una región primero.	There is no previous region yet. Capture a region first.
+Baja	Low
+Bajar	Move down
+Biblioteca	Library
+Borrar	Clear
+Borrar archivos temporales	Delete temporary files
+Borrar historial de la biblioteca	Clear library history
+Borrar registro	Clear log
+Borrar temporales	Delete temp files
+Buscador para «Buscar texto»	Search engine for “Search text”
+Buscando cámaras…	Looking for cameras…
+Buscando datos sensibles con OCR local…	Looking for sensitive data with local OCR…
+Buscar por nombre o etiqueta	Search by name or tag
+Buscar texto seleccionado	Search selected text
+Cada N segundos	Every N seconds
+Cada captura se escribe en la carpeta de capturas.	Every capture is written to the captures folder.
+Cada {0} s. Detenlas desde Herramientas.	Every {0} s. Stop them from Tools.
+Calidad	Quality
+Calidad JPG / WebP (compresión)	JPG / WebP quality (compression)
+Cambiar…	Change…
+Cancelar	Cancel
+Captura con pasos	Step capture
+Captura copiada	Capture copied
+Captura el fallo, márcalo con flechas en el editor y adjunta todas las capturas que necesites.	Capture the bug, mark it with arrows in the editor and attach as many screenshots as you need.
+Captura extendida	Scrolling capture
+Captura extendida cancelada.	Scrolling capture cancelled.
+Captura extendida detenida con Esc.	Scrolling capture stopped with Esc.
+Captura guardada	Capture saved
+Captura una región o abre una imagen para extraer su texto. Todo el reconocimiento se hace en este equipo.	Capture a region or open an image to extract its text. All recognition happens on this PC.
+Capturar	Capture
+Capturar A	Capture A
+Capturar B	Capture B
+Capturar de nuevo la última región	Capture the last region again
+Capturar el error	Capture the bug
+Capturar pantalla	Capture screen
+Capturar pantalla completa	Capture full screen
+Capturar paso	Capture step
+Capturar región	Capture region
+Capturar región de pantalla	Capture screen region
+Capturar una región de la pantalla	Capture a region of the screen
+Capturar ventana	Capture window
+Capturar ventana activa	Capture active window
+Capturas	Captures
+Capturas periódicas	Periodic captures
+Capturas periódicas activas	Periodic captures active
+Capturas periódicas detenidas	Periodic captures stopped
+Capturas recientes	Recent captures
+Carpeta de GIF	GIF folder
+Carpeta de modelos	Models folder
+Carpeta de salida	Output folder
+Carpeta de salida…	Output folder…
+Carpeta de videos	Videos folder
+Carpeta predeterminada de capturas	Default captures folder
+Carpetas	Folders
+Censura sólida irreversible (K)	Irreversible solid redaction (K)
+Cerrar	Close
+Cerrar la aplicación por completo	Quit the application completely
+Cerrar por completo	Quit completely
+Claro	Light
+Colección	Collection
+Colección…	Collection…
+Coloca el cabezal lejos de un corte existente para dividir.	Move the playhead away from an existing cut to split.
+Color, regla, QR, comparar…	Color, ruler, QR, compare…
+Colores recientes (clic para copiar)	Recent colors (click to copy)
+Combinador	Combiner
+Combinador de imágenes	Image combiner
+Comenzar grabación GIF	Start GIF recording
+Comparador	Compare
+Comparador de capturas	Capture comparison
+Con temporizador	With timer
+Configuración	Settings
+Configuración exportada.	Settings exported.
+Configuración importada.	Settings imported.
+Configurar tecla	Set key
+Contenido del código QR (copiado al portapapeles):	QR code content (copied to the clipboard):
+Contenido leído:	Decoded content:
+Conversor	Converter
+Conversor de imágenes	Image converter
+Convertir	Convert
+Convertir a	Convert to
+Convirtiendo {0} de {1}…	Converting {0} of {1}…
+Copia de la configuración	Settings backup
+Copiado	Copied
+Copiar	Copy
+Copiar HEX	Copy HEX
+Copiar RGB	Copy RGB
+Copiar al portapapeles después de capturar	Copy to clipboard after capturing
+Copiar imagen	Copy image
+Copiar para GitHub / chat	Copy for GitHub / chat
+Copiar texto	Copy text
+Cuadro de diálogo (G)	Callout (G)
+Cuadrícula	Grid
+Cuenta regresiva	Countdown
+Cursor y teclado	Cursor and keyboard
+Cámara	Camera
+Cámbialos en Atajos de teclado.	Change them in Keyboard shortcuts.
+Círculo / elipse (E)	Circle / ellipse (E)
+Código QR	QR code
+Define qué ocurre automáticamente después de capturar, grabar o reconocer texto. Cada regla puede activarse o desactivarse.	Define what happens automatically after capturing, recording or recognizing text. Each rule can be turned on or off.
+Depende de los paquetes de idioma instalados en Windows. El reconocimiento es 100 % local.	Depends on the language packs installed in Windows. Recognition is 100% local.
+Descartando…	Discarding…
+Descartar grabación	Discard recording
+Descripción copiada. Pégala en GitHub Issues o en tu chat; arrastra allí las capturas para adjuntarlas.	Description copied. Paste it into GitHub Issues or your chat; drag the screenshots there to attach them.
+Desde aquí	From here
+Desde archivo…	From file…
+Desde el portapapeles	From clipboard
+Desde portapapeles	From clipboard
+Desenfoque localizado (U)	Local blur (U)
+Deshacer (Ctrl+Z)	Undo (Ctrl+Z)
+Deshacer último	Undo last
+Deslizador antes/después	Before/after slider
+Desplazamiento vertical	Vertical scrolling
+Detener capturas periódicas	Stop periodic captures
+Detener grabación	Stop recording
+Detener y guardar	Stop and save
+Dibuja la flecha…	Draw the arrow…
+Dimensiones manuales	Manual dimensions
+Disponible. Pulsa Guardar (o Enter) para asignarla.	Available. Press Save (or Enter) to assign it.
+Dispositivo de entrada	Input device
+Distancia	Distance
+Dividir (S)	Split (S)
+Duplicar elemento (Ctrl+D)	Duplicate item (Ctrl+D)
+Duración resultante: {0}	Resulting duration: {0}
+Editar	Edit
+Editar / convertir GIF	Edit / convert GIF
+Ejemplo:	Example:
+El ancho y el alto deben ser mayores que cero.	Width and height must be greater than zero.
+El archivo es demasiado grande para ser una configuración válida.	The file is too large to be a valid settings file.
+El archivo es válido. ¿Reemplazar la configuración actual por la importada?	The file is valid. Replace the current settings with the imported ones?
+El archivo está vacío.	The file is empty.
+El archivo no contiene un objeto de configuración.	The file does not contain a settings object.
+El archivo no parece una configuración de Fran Capture Studio (falta SchemaVersion).	The file does not look like a Fran Capture Studio settings file (SchemaVersion is missing).
+El archivo no se aplicó.	The file was not applied.
+El archivo ya no existe en su ubicación.	The file no longer exists at its location.
+El codificador de video se detuvo inesperadamente.	The video encoder stopped unexpectedly.
+El contenido no se desplazó. Coloca la región sobre un área con desplazamiento vertical e inténtalo de nuevo.	The content did not scroll. Place the region over an area that scrolls vertically and try again.
+El contenido protegido por DRM o por Windows aparece en negro: la aplicación no intenta eludir esas restricciones.	Content protected by DRM or by Windows appears black: the app does not try to bypass those restrictions.
+El modelo no pudo ejecutarse:	The model could not run:
+El portapapeles no contiene una imagen.	The clipboard does not contain an image.
+El registro está vacío.	The log is empty.
+El tamaño debe estar entre 1 y 20000 píxeles.	Size must be between 1 and 20000 pixels.
+Elige con un clic	Pick with a click
+Elige dos imágenes para comparar.	Choose two images to compare.
+Elige un nombre distinto al del video original.	Choose a name different from the original video.
+Eliminar	Delete
+Eliminar / restaurar segmento (Supr)	Remove / restore segment (Del)
+Eliminar archivo…	Delete file…
+Eliminar audio	Remove audio
+Eliminar elemento (Supr)	Delete item (Del)
+Eliminar fondo	Remove background
+Eliminar fondo…	Remove background…
+Eliminar metadatos	Strip metadata
+Eliminar regla	Delete rule
+Eliminar…	Delete…
+Empezar	Get started
+Enlaces detectados	Detected links
+Enviar a ▾	Send to ▾
+Error al exportar.	Export failed.
+Errores:	Errors:
+Esa regla ya existe. Puedes activarla o desactivarla en la lista.	That rule already exists. You can turn it on or off in the list.
+Esa tecla no puede usarse como atajo global.	That key cannot be used as a global shortcut.
+Escribe X, Y, ancho y alto en píxeles (por ejemplo: 100, 100, 1280, 720):	Type X, Y, width and height in pixels (for example: 100, 100, 1280, 720):
+Escribe el texto. Ctrl+Enter o clic fuera para confirmar, Esc para cancelar.	Type the text. Ctrl+Enter or click outside to confirm, Esc to cancel.
+Escritorio completo	Whole desktop
+Espacio usado por las capturas	Space used by captures
+Espacio usado: {0} · Elementos en la biblioteca: {1}	Space used: {0} · Library items: {1}
+Espacio y limpieza	Space and cleanup
+Esta aplicación no es compatible con la captura extendida: el contenido no se desplaza de forma uniforme (animaciones, video o desplazamiento por páginas). No se generó ninguna imagen para evitar un resultado dañado.	This app is not compatible with scrolling capture: the content does not scroll uniformly (animations, video or paged scrolling). No image was produced to avoid a corrupted result.
+Esta tecla necesita combinarse con Ctrl o Alt; usarla sola interferiría con la escritura normal. Las teclas de función (F2–F11, F13–F24), ImprPant y Pausa sí pueden usarse solas.	This key must be combined with Ctrl or Alt; using it alone would interfere with normal typing. Function keys (F2–F11, F13–F24), PrintScreen and Pause can be used alone.
+Esta ventana no aparece en las capturas. Cada paso recibe su número automáticamente.	This window does not appear in captures. Each step gets its number automatically.
+Este instalador no está firmado digitalmente. Componentes de terceros: .NET, FFmpeg (LGPL, ejecutable independiente), NAudio, ZXing.Net, SQLite, PDFsharp, ONNX Runtime y CommunityToolkit. Consulta THIRD-PARTY-NOTICES.md en la carpeta de instalación.	This installer is not digitally signed. Third-party components: .NET, FFmpeg (LGPL, standalone executable), NAudio, ZXing.Net, SQLite, PDFsharp, ONNX Runtime and CommunityToolkit. See THIRD-PARTY-NOTICES.md in the install folder.
+Etiquetas	Tags
+Etiquetas separadas por comas:	Comma-separated tags:
+Etiquetas…	Tags…
+Existentes:	Existing:
+Explorador	Explorer
+Exportación cancelada.	Export cancelled.
+Exportación completada	Export complete
+Exportado:	Exported:
+Exportando…	Exporting…
+Exportar	Export
+Exportar HTML…	Export HTML…
+Exportar Markdown…	Export Markdown…
+Exportar PDF…	Export PDF…
+Exportar a documento	Export to document
+Exportar a documento (DOCX)…	Export to document (DOCX)…
+Exportar configuración	Export settings
+Exportar configuración…	Export settings…
+Exportar reporte	Export report
+Exportar…	Export…
+Extendida	Scrolling
+Extraer texto	Extract text
+Extraer texto (OCR)	Extract text (OCR)
+FFmpeg no pudo exportar el video.	FFmpeg could not export the video.
+Fecha	Date
+Fijar	Pin
+Fijar en pantalla	Pin to screen
+Fijar imagen en pantalla	Pin image to screen
+Final aquí (O)	End here (O)
+Finalizando…	Finishing…
+Finalizar grabación	Stop recording
+Flecha	Arrow
+Flecha (A)	Arrow (A)
+Fondo eliminado con el modelo local.	Background removed with the local model.
+Fondo uniforme · tolerancia	Uniform background · tolerance
+Formato	Format
+Formato no válido. Usa cuatro números: X, Y, ancho, alto.	Invalid format. Use four numbers: X, Y, width, height.
+Formato no válido. Usa «ancho x alto» o un porcentaje.	Invalid format. Use “width x height” or a percentage.
+Formato predeterminado	Default format
+Formatos de entrada: PNG, JPG, BMP, GIF, TIFF y WebP. Salida: PNG, JPG, WebP, BMP, GIF y TIFF.	Input formats: PNG, JPG, BMP, GIF, TIFF and WebP. Output: PNG, JPG, WebP, BMP, GIF and TIFF.
+Fotogramas por segundo	Frames per second
+Fotogramas por segundo del GIF	GIF frames per second
+Fran Capture Studio funciona en local: sin cuentas, sin telemetría y sin subir capturas a ningún servicio.	Fran Capture Studio works locally: no accounts, no telemetry and no uploading of captures to any service.
+Funciona desde cualquier programa.	Works from any program.
+GIF de una región	GIF of a region
+GIF guardado	GIF saved
+Generar	Generate
+Generar código QR	Generate QR code
+Grabación	Recording
+Grabación de pantalla	Screen recording
+Grabación en curso	Recording in progress
+Grabación en pausa	Recording paused
+Grabación guardada	Recording saved
+Grabación interrumpida	Recording interrupted
+Grabación recuperada	Recording recovered
+Grabando	Recording
+Grabar	Record
+Grabar GIF	Record GIF
+Grabar audio del sistema	Record system audio
+Grabar esta región	Record this region
+Grabar micrófono	Record microphone
+Grabar video	Record video
+Grosor	Thickness
+Grosor del borde en píxeles (se usará el color seleccionado):	Border thickness in pixels (the selected color will be used):
+Guardado en	Saved to
+Guardar	Save
+Guardar  (Ctrl+S)	Save  (Ctrl+S)
+Guardar PNG…	Save PNG…
+Guardar automáticamente	Save automatically
+Guardar como	Save as
+Guardar como TXT…	Save as TXT…
+Guardar como…	Save as…
+Guardar como…  (Ctrl+Shift+S)	Save as…  (Ctrl+Shift+S)
+Guardar proyecto editable	Save editable project
+Guardar proyecto editable…	Save editable project…
+Guardar registro local de errores	Keep a local error log
+Guardar texto	Save text
+HEX y RGB de cualquier píxel	HEX and RGB of any pixel
+Hasta aquí	Until here
+Hay cambios sin guardar. ¿Quieres guardarlos antes de continuar?	There are unsaved changes. Do you want to save them before continuing?
+Hay una grabación en curso. Si sales ahora se detendrá y se guardará. ¿Salir?	A recording is in progress. If you quit now it will be stopped and saved. Quit?
+Haz clic en la ventana que quieres capturar · Esc para cancelar	Click the window you want to capture · Esc to cancel
+Haz clic para copiar el color · Esc para salir	Click to copy the color · Esc to exit
+Herramienta: censura sólida (recomendada)	Tool: solid redaction (recommended)
+Herramienta: desenfoque	Tool: blur
+Herramienta: pixelar	Tool: pixelate
+Herramientas	Tools
+Idioma	Language
+Idioma de reconocimiento	Recognition language
+Igualar ancho/alto	Match width/height
+Imagen	Image
+Imagen A…	Image A…
+Imagen B…	Image B…
+Imagen copiada al portapapeles.	Image copied to the clipboard.
+Imagen fijada	Pinned image
+Imagen guardada	Image saved
+Imagen o portapapeles	Image or clipboard
+Imagen ▾	Image ▾
+Importar configuración	Import settings
+Importar configuración…	Import settings…
+Imágenes	Images
+Incluir el cursor en las capturas	Include the cursor in captures
+Incluir información técnica (puedes editarla y borrar datos privados antes de exportar)	Include technical information (you can edit it and remove private data before exporting)
+Información técnica	Technical information
+Iniciar captura extendida	Start scrolling capture
+Iniciar con Windows	Start with Windows
+Iniciar con Windows (minimizada)	Start with Windows (minimized)
+Iniciar grabación	Start recording
+Iniciar minimizada en la bandeja	Start minimized to the tray
+Inicio	Home
+Inicio aquí (I)	Start here (I)
+Inicio y cierre	Startup and closing
+Insertar imagen…	Insert image…
+Intensidad	Strength
+Intervalo en segundos entre capturas de pantalla completa. Se guardan en la carpeta de capturas hasta que las detengas desde esta misma página:	Interval in seconds between full-screen captures. They are saved to the captures folder until you stop them from this same page:
+La captura está en el portapapeles.	The capture is on the clipboard.
+La captura extendida se detuvo porque el contenido dejó de desplazarse de forma uniforme. Se conserva lo ensamblado hasta ese punto.	Scrolling capture stopped because the content stopped scrolling uniformly. What was stitched up to that point is kept.
+La censura sólida sustituye los píxeles por un color opaco y es el único método que garantiza que el contenido no puede recuperarse.\n\nEl pixelado y el desenfoque ocultan a simple vista, pero con texto grande o patrones previsibles podrían revertirse parcialmente: no los uses para contraseñas, claves o datos bancarios.\n\nAl exportar, la imagen se aplana y el archivo no conserva lo que había debajo ni metadatos. El proyecto editable (.fcsproj) sí conserva la imagen original: no lo compartas si contiene datos privados.	Solid redaction replaces the pixels with an opaque color and is the only method that guarantees the content cannot be recovered.\n\nPixelation and blur hide content at a glance, but with large text or predictable patterns they could be partially reversed: do not use them for passwords, keys or banking data.\n\nOn export the image is flattened and the file keeps neither what was underneath nor metadata. The editable project (.fcsproj) does keep the original image: do not share it if it contains private data.
+La configuración fue creada con una versión más reciente y no puede importarse.	The settings were created with a newer version and cannot be imported.
+La que tenga el foco	The one that has focus
+La región a grabar es demasiado pequeña.	The region to record is too small.
+La región es demasiado pequeña para una captura extendida (mínimo 40 × 80 px).	The region is too small for a scrolling capture (minimum 40 × 80 px).
+La región indicada queda fuera de la pantalla.	The specified region is off-screen.
+La última región ya no está dentro de ninguna pantalla conectada.	The last region is no longer inside any connected display.
+Lado a lado	Side by side
+Las combinaciones con la tecla Windows están reservadas por el sistema.	Combinations with the Windows key are reserved by the system.
+Las imágenes son idénticas.	The images are identical.
+Leer QR	Read QR
+Leer código QR	Read QR code
+Leer código QR de la imagen	Read QR code from the image
+Leer y generar	Read and generate
+Libre en el disco: {0}	Free on disk: {0}
+Lista	List
+Local, sin conexión	Local, offline
+Los archivos exportados se recodifican desde los píxeles y no incluyen metadatos (EXIF, autor, ubicación).	Exported files are re-encoded from pixels and contain no metadata (EXIF, author, location).
+Los atajos funcionan en todo Windows aunque otra aplicación tenga el foco, mientras Fran Capture Studio esté abierto o en la bandeja. Se liberan al salir completamente.	Shortcuts work across Windows even when another app has focus, while Fran Capture Studio is open or in the tray. They are released when you quit completely.
+Lupa	Magnifier
+Lápiz (P)	Pen (P)
+Línea (L)	Line (L)
+Marca de agua	Watermark
+Marcadores: {fecha} {hora} {yyyy} {MM} {dd} {HH} {mm} {ss} {n} {tipo}	Placeholders: {fecha} (date) {hora} (time) {yyyy} {MM} {dd} {HH} {mm} {ss} {n} {tipo} (kind)
+Marcar como favorito	Mark as favorite
+Media	Medium
+Medición e inspección	Measure and inspect
+Micrófono: desactivado	Microphone: off
+Micrófono: grabando	Microphone: recording
+Mide distancias en píxeles	Measure distances in pixels
+Minimizar a la bandeja (atajos activos)	Minimize to tray (shortcuts stay active)
+Misma región	Same region
+Modelo no instalado. Copia un archivo u2netp.onnx o u2net.onnx en la carpeta de modelos.	Model not installed. Copy a u2netp.onnx or u2net.onnx file into the models folder.
+Modos de captura	Capture modes
+Mostrando los primeros {0}	Showing the first {0}
+Mostrar biblioteca	Show library
+Mostrar cámara web	Show webcam
+Mostrar el cursor	Show the cursor
+Mostrar panel rápido	Show quick panel
+Mostrar teclas pulsadas	Show pressed keys
+Muestra el diálogo «Guardar como» de Windows en cada captura.	Shows the Windows “Save as” dialog for every capture.
+Más antiguas primero	Oldest first
+Más recientes primero	Newest first
+Ninguno.	None.
+No hay elementos que coincidan. Las capturas y grabaciones que hagas aparecerán aquí.	No matching items. Your captures and recordings will appear here.
+No hay ninguna ventana activa que capturar.	There is no active window to capture.
+No hay ningún codificador WebM (VP9/VP8) disponible en este equipo.	No WebM encoder (VP9/VP8) is available on this PC.
+No hay ningún codificador de video disponible en este equipo.	No video encoder is available on this PC.
+No hay reglas. Agrega una abajo.	No rules. Add one below.
+No queda ningún segmento que exportar. Restaura alguno.	There is no segment left to export. Restore one.
+No se detectaron datos sensibles automáticamente. Revisa la imagen y usa la censura sólida manualmente si hace falta.	No sensitive data was detected automatically. Review the image and use solid redaction manually if needed.
+No se detectó ninguna cámara	No camera detected
+No se detectó ningún monitor.	No display detected.
+No se encontró el componente FFmpeg (ffmpeg\\ffmpeg.exe). Reinstala Fran Capture Studio para restaurarlo.	The FFmpeg component (ffmpeg\\ffmpeg.exe) was not found. Reinstall Fran Capture Studio to restore it.
+No se encontró ningún código QR en la imagen.	No QR code was found in the image.
+No se pudieron guardar los pasos:	The steps could not be saved:
+No se pudo abrir el proyecto:	The project could not be opened:
+No se pudo abrir la imagen:	The image could not be opened:
+No se pudo abrir:	Could not open:
+No se pudo acceder al portapapeles.	Could not access the clipboard.
+No se pudo completar la captura extendida.	The scrolling capture could not be completed.
+No se pudo ejecutar el OCR:	OCR could not run:
+No se pudo exportar el reporte:	The report could not be exported:
+No se pudo exportar:	Could not export:
+No se pudo finalizar la grabación:	The recording could not be finished:
+No se pudo generar el código (¿texto demasiado largo?):	The code could not be generated (text too long?):
+No se pudo guardar	Could not save
+No se pudo guardar el archivo:	The file could not be saved:
+No se pudo guardar el proyecto:	The project could not be saved:
+No se pudo guardar la portada:	The cover could not be saved:
+No se pudo importar:	Could not import:
+No se pudo iniciar la grabación:	The recording could not be started:
+No se pudo leer el video.	The video could not be read.
+No se pudo realizar la captura: 	The capture failed:
+No se pudo recuperar la grabación:	The recording could not be recovered:
+No se pudo registrar: está en uso por otra aplicación. Elige otra combinación.	Could not register: it is in use by another app. Choose another combination.
+No se reconoció texto en la imagen.	No text was recognized in the image.
+Nombre automático	Automatic name
+Nombre de la colección (vacío para quitarla).	Collection name (leave empty to remove it).
+Nombre y formato	Name and format
+Notas	Notes
+Notificaciones	Notifications
+Nueva regla	New rule
+Nuevo nombre (sin extensión):	New name (without extension):
+Nuevo reporte	New report
+Nuevo tamaño en píxeles (ancho x alto) o porcentaje (por ejemplo 50%). Tamaño actual: {0} x {1}	New size in pixels (width x height) or percentage (for example 50%). Current size: {0} x {1}
+Numeración automática	Automatic numbering
+Número de paso	Step number
+Número de paso automático (N)	Automatic step number (N)
+Número:	Number:
+OCR sobre una región	OCR on a region
+OCR — extraer texto	OCR — extract text
+Ocultar datos sensibles automáticamente (correos, teléfonos, tarjetas, IP)	Hide sensitive data automatically (emails, phones, cards, IPs)
+Ocurrió un error inesperado. La aplicación seguirá funcionando.	An unexpected error occurred. The application will keep running.
+Opacidad	Opacity
+Opciones de las reglas	Rule options
+Oscuro	Dark
+Otro color…	Other color…
+Panel rápido	Quick panel
+Pantalla completa	Full screen
+Pantalla, ventana o región	Screen, window or region
+Para ImprPant, desactiva en Windows «Usar la tecla Imprimir pantalla para abrir Recortes» (Configuración > Accesibilidad > Teclado).	For PrintScreen, turn off “Use the Print screen key to open Snipping Tool” in Windows (Settings > Accessibility > Keyboard).
+Para escribir WebP se necesita el componente FFmpeg incluido con la aplicación.	Writing WebP requires the FFmpeg component included with the app.
+Pasos guardados	Steps saved
+Pasos para reproducirlo	Steps to reproduce
+Pasos: {0}	Steps: {0}
+Pausar / reanudar	Pause / resume
+Pausar o continuar grabación	Pause or resume recording
+Pegar del portapapeles	Paste from clipboard
+Pegar imagen del portapapeles  (Ctrl+V)	Paste image from clipboard  (Ctrl+V)
+Pixelado y desenfoque	Pixelate and blur
+Pixelar (X)	Pixelate (X)
+Por seguridad, las automatizaciones solo ejecutan acciones internas de la aplicación: no lanzan programas externos, no ejecutan comandos y no suben archivos a ningún servicio.	For safety, automations only run actions inside the app: they do not launch external programs, run commands or upload files to any service.
+Portada guardada: se usa como miniatura en la biblioteca.	Cover saved: it is used as the thumbnail in the library.
+Predeterminada	Default
+Predeterminado del sistema	System default
+Preguntar ubicación al guardar	Ask where to save
+Privacidad y diagnósticos	Privacy and diagnostics
+Privacidad ▾	Privacy ▾
+Procesando con el modelo local…	Processing with the local model…
+Proyecto guardado en	Project saved to
+Pulsa ahora la tecla o combinación que quieres usar (por ejemplo F9 o Ctrl+Shift+S).	Now press the key or combination you want to use (for example F9 or Ctrl+Shift+S).
+Pulsa una tecla que no sea solo Ctrl, Alt o Shift.	Press a key other than just Ctrl, Alt or Shift.
+Quitar	Remove
+Quitar atajo	Remove shortcut
+Quitar de favoritos	Remove from favorites
+Quitar de la biblioteca (conserva el archivo)	Remove from library (keeps the file)
+Quitar del reporte (no borra el archivo)	Remove from report (does not delete the file)
+Qué esperabas que sucediera	What you expected to happen
+Qué ocurrió	What happened
+Reconocer texto	Recognize text
+Reconociendo texto…	Recognizing text…
+Recorta todo lo anterior a la posición actual	Trims everything before the current position
+Recorta todo lo posterior a la posición actual	Trims everything after the current position
+Recortar (C)	Crop (C)
+Rectángulo (R)	Rectangle (R)
+Recuperar ediciones	Recover edits
+Recuperar grabación	Recover recording
+Redimensionar	Resize
+Redimensionar…	Resize…
+Registro eliminado.	Log deleted.
+Región	Region
+Región animada	Animated region
+Región con dimensiones exactas	Region with exact dimensions
+Región exacta	Exact region
+Regla en pantalla	Screen ruler
+Reglas	Rules
+Rehacer (Ctrl+Y)	Redo (Ctrl+Y)
+Relleno	Fill
+Renombrar	Rename
+Renombrar…	Rename…
+Repetir la selección anterior	Repeat the previous selection
+Reporte de errores	Bug report
+Reporte exportado	Report exported
+Reporte exportado:	Report exported:
+Reproducir / pausar (Espacio)	Play / pause (Space)
+Resaltador (H)	Highlighter (H)
+Resaltar clics	Highlight clicks
+Resaltar diferencias	Highlight differences
+Resolución	Resolution
+Restablecer	Reset
+Restaurar atajos predeterminados	Restore default shortcuts
+Restaurar reglas predeterminadas	Restore default rules
+Rotar 90° a la derecha	Rotate 90° right
+Rotar 90° a la izquierda	Rotate 90° left
+Salida:	Output:
+Salir completamente	Quit completely
+Salir completamente ahora	Quit completely now
+Se alcanzó la altura máxima de la captura extendida.	The maximum height of the scrolling capture was reached.
+Se aplica a pantalla completa, monitor y ventana activa.	Applies to full screen, monitor and active window.
+Se encontraron {0} ediciones sin guardar de una sesión anterior. ¿Quieres restaurarlas?	{0} unsaved edits from a previous session were found. Do you want to restore them?
+Se encontró una grabación interrumpida del {0}. ¿Quieres recuperarla?	An interrupted recording from {0} was found. Do you want to recover it?
+Se intentará conservar lo grabado.	An attempt will be made to keep what was recorded.
+Se ocultaron {0} datos con censura sólida. Revisa la imagen: la detección automática puede omitir información.	{0} items were hidden with solid redaction. Review the image: automatic detection may miss information.
+Se olvidará el historial de la biblioteca (favoritos, etiquetas y colecciones). Tus archivos NO se eliminarán. ¿Continuar?	The library history (favorites, tags and collections) will be forgotten. Your files will NOT be deleted. Continue?
+Seguir en la bandeja (atajos activos)	Keep running in the tray (shortcuts active)
+Selecciona primero el texto que quieres buscar.	Select the text you want to search first.
+Selecciona un elemento para ver sus detalles y acciones. Doble clic para abrirlo.	Select an item to see its details and actions. Double-click to open it.
+Selecciona un área	Select an area
+Seleccionar y mover (V)	Select and move (V)
+Selector de colores	Color picker
+Separación	Spacing
+Severidad (opcional)	Severity (optional)
+Si eliges «No», se eliminarán sus archivos temporales.	If you choose “No”, its temporary files will be deleted.
+Siempre visible	Always on top
+Sigue activo en la bandeja del sistema. Usa «Salir completamente» en su menú para cerrarlo.	Still running in the system tray. Use “Quit completely” in its menu to close it.
+Sin atajo	No shortcut
+Sin capturas adjuntas.	No screenshots attached.
+Sin cuenta regresiva	No countdown
+Sin temporizador	No timer
+Sin título	Untitled
+Solo favoritos	Favorites only
+Solo se muestran atajos (con Ctrl, Alt o Win) y teclas especiales. El texto que escribes —incluidas contraseñas— nunca se muestra ni se guarda.	Only shortcuts (with Ctrl, Alt or Win) and special keys are shown. The text you type — including passwords — is never shown or stored.
+Solo eventos técnicos; nunca contenido de capturas ni pulsaciones. No se envía a ningún sitio.	Technical events only; never capture contents or keystrokes. It is not sent anywhere.
+Sonidos	Sounds
+Subir	Move up
+Tamaño	Size
+Tamaño original	Original size
+Te damos la bienvenida a Fran Capture Studio	Welcome to Fran Capture Studio
+Tecla para abrir el selector de captura	Key to open the capture selector
+Tema	Theme
+Temporizador predeterminado	Default timer
+Terminar y combinar	Finish and combine
+Terminar y crear reporte	Finish and create report
+Terminar y guardar	Finish and save
+Texto	Text
+Texto (T)	Text (T)
+Texto copiado al portapapeles.	Text copied to the clipboard.
+Texto de la marca de agua	Watermark text
+Texto de la marca de agua:	Watermark text:
+Texto o enlace:	Text or link:
+Texto que aparecerá durante 3 segundos desde la posición actual (después puedes moverlo y ajustar su intervalo):	Text shown for 3 seconds from the current position (you can move it and adjust its interval afterwards):
+Tipo	Type
+Todas las colecciones	All collections
+Todas las pantallas	All screens
+Todo	All
+Todo funciona en local: sin cuentas, sin telemetría y sin subir tus capturas.	Everything works locally: no accounts, no telemetry and no uploading of your captures.
+Traer al frente	Bring to front
+Título	Title
+Ubicación	Location
+Un paso por línea; se numeran automáticamente.	One step per line; they are numbered automatically.
+Unir capturas	Join captures
+Unos ajustes rápidos; podrás cambiarlos cuando quieras en Configuración.	A few quick settings; you can change them any time in Settings.
+Usa NVENC, Quick Sync o AMF si están disponibles; si no, codifica por software.	Uses NVENC, Quick Sync or AMF when available; otherwise encodes in software.
+Usa la barra flotante o los atajos para pausar, reanudar o detener. La barra no aparece en el video.	Use the floating bar or the shortcuts to pause, resume or stop. The bar does not appear in the video.
+Usar esta región	Use this region
+Usar fotograma como portada	Use frame as cover
+Usar modelo local (U²-Net)	Use local model (U²-Net)
+Vaciar lista	Clear list
+Velocidad	Speed
+Ventana	Window
+Ventana activa	Active window
+Ver biblioteca	View library
+Ver registro	View log
+Voltear horizontalmente	Flip horizontally
+Voltear verticalmente	Flip vertically
+Windows indica que esta combinación ya está registrada por otra aplicación (o reservada por el sistema), así que no puede usarse.	Windows reports that this combination is already registered by another app (or reserved by the system), so it cannot be used.
+Windows no puede reproducir este formato en la vista previa (habitual con WebM). El recorte, la división y la exportación siguen funcionando.	Windows cannot play this format in the preview (common with WebM). Trimming, splitting and exporting still work.
+Windows no tiene instalado ningún idioma con reconocimiento de texto (OCR). Instala un paquete de idioma en Configuración > Hora e idioma > Idioma y región.	Windows has no language with text recognition (OCR) installed. Install a language pack in Settings > Time & language > Language & region.
+Windows u otras funciones básicas reservan esta combinación. Elige otra.	Windows or other basic functions reserve this combination. Choose another.
+Ya está asignada a «{0}». Quita ese atajo primero o elige otra combinación.	It is already assigned to “{0}”. Remove that shortcut first or choose another combination.
+Ya existe un archivo con ese nombre.	A file with that name already exists.
+abrir editor	open editor
+abrir editor de video	open video editor
+agregar fecha al nombre	add date to the name
+agregar marca de agua	add watermark
+convertir a JPG	convert to JPG
+copiada al portapapeles	copied to the clipboard
+copiado al portapapeles	copied to the clipboard
+copiar al portapapeles	copy to clipboard
+copiar texto	copy text
+en uso por otra aplicación	in use by another app
+guardar automáticamente	save automatically
+no se pudo registrar	could not be registered
+principal	primary
+rueda: nivel de zoom	wheel: zoom level
+sin audio	no audio
+tamaños diferentes	different sizes
+{0:N0} píxeles de fondo eliminados	{0:N0} background pixels removed
+{0:N0} píxeles distintos ({1:0.##} %)	{0:N0} different pixels ({1:0.##} %)
+{0} archivos convertidos.	{0} files converted.
+{0} capturas guardadas.	{0} captures saved.
+{0} capturas numeradas en la carpeta de capturas.	{0} numbered captures in the captures folder.
+{0} elementos	{0} items
+{0} en las carpetas de capturas y videos · {1} elementos en la biblioteca	{0} in the captures and videos folders · {1} items in the library
+{0} líneas reconocidas · idioma: {1}	{0} lines recognized · language: {1}
+{0} segundos · pantalla completa	{0} seconds · full screen
+{0} segundos · ventana activa	{0} seconds · active window
+¿Abrir este enlace en el navegador?	Open this link in the browser?
+¿Descartar esta grabación? No se guardará.	Discard this recording? It will not be saved.
+¿Eliminar «{0}»? El archivo se enviará a la Papelera de reciclaje.	Delete “{0}”? The file will be sent to the Recycle Bin.
+¿Qué método protege mejor?	Which method protects best?
+¿Qué quieres grabar?	What do you want to record?
+¿Vaciar el reporte actual? Las capturas guardadas no se eliminan.	Clear the current report? Saved screenshots are not deleted.
+Última región	Last region
+• ImprPant solo puede asignarse si Windows no la tiene reservada para la herramienta Recortes (Configuración > Accesibilidad > Teclado).	• PrintScreen can only be assigned if Windows has not reserved it for Snipping Tool (Settings > Accessibility > Keyboard).
+• Las teclas de función (F2–F11, F13–F24), ImprPant y Pausa pueden usarse solas. Las letras y números necesitan Ctrl o Alt.	• Function keys (F2–F11, F13–F24), PrintScreen and Pause can be used alone. Letters and numbers need Ctrl or Alt.
+• Se usa la API oficial RegisterHotKey: Windows solo avisa de las combinaciones registradas; no se observa ninguna otra pulsación.	• The official RegisterHotKey API is used: Windows only reports registered combinations; no other keystroke is observed.
+★ Favorito	★ Favorite
+☆ Favorito	☆ Favorite
+Sin conexión, las grabaciones y capturas permanecen en este equipo.	Offline: recordings and captures stay on this PC.
