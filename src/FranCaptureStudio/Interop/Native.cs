@@ -88,13 +88,23 @@ internal static class Native
         SendInput(1, inp, Marshal.SizeOf<INPUT>());
     }
 
-    public static void SendKey(ushort vk, ushort[]? modifiers = null)
+    [DllImport("user32.dll")] public static extern void keybd_event(byte vk, byte scan, uint flags, UIntPtr extra);
+
+    /// <summary>Pulsación sintética con keybd_event (alternativa a SendInput).</summary>
+    public static void SendKeyLegacy(byte vk, byte[] modifiers)
+    {
+        foreach (var m in modifiers) keybd_event(m, 0, 0, UIntPtr.Zero);
+        keybd_event(vk, 0, 0, UIntPtr.Zero); keybd_event(vk, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        foreach (var m in modifiers.Reverse()) keybd_event(m, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static uint SendKey(ushort vk, ushort[]? modifiers = null)
     {
         var list = new List<INPUT>();
         foreach (var m in modifiers ?? []) list.Add(Key(m, false));
         list.Add(Key(vk, false)); list.Add(Key(vk, true));
         foreach (var m in (modifiers ?? []).Reverse()) list.Add(Key(m, true));
-        SendInput((uint)list.Count, list.ToArray(), Marshal.SizeOf<INPUT>());
+        return SendInput((uint)list.Count, list.ToArray(), Marshal.SizeOf<INPUT>());
         static INPUT Key(ushort k, bool up) { var i = new INPUT { type = INPUT_KEYBOARD }; i.ki.wVk = k; i.ki.dwFlags = up ? KEYEVENTF_KEYUP : 0; return i; }
     }
 

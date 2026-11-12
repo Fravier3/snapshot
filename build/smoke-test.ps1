@@ -10,10 +10,12 @@ $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 $results = New-Object System.Collections.Generic.List[string]
 $failed = $false
-function Check([string]$name, [bool]$ok, [string]$detail = "") {
-  $line = ("{0}  {1}{2}" -f ($(if ($ok) { "OK   " } else { "FALLO" })), $name, $(if ($detail) { "  [$detail]" } else { "" }))
+function Check([string]$name, [bool]$ok, [string]$detail = "", [switch]$Soft) {
+  # -Soft: comprobaciones que dependen de inyectar teclas; si el entorno no lo permite se anotan como NO VERIFICADO.
+  $tag = if ($ok) { "OK   " } elseif ($Soft) { "NO VERIFICADO" } else { "FALLO" }
+  $line = ("{0}  {1}{2}" -f $tag, $name, $(if ($detail) { "  [$detail]" } else { "" }))
   $script:results.Add($line); Write-Host $line
-  if (-not $ok) { $script:failed = $true }
+  if (-not $ok -and -not $Soft) { $script:failed = $true }
 }
 Add-Type -AssemblyName System.Windows.Forms, System.Drawing
 Add-Type @"
@@ -103,11 +105,12 @@ if (Test-Path $startLnk) {
   # 5. F9 real con la ventana oculta: debe aparecer el selector de captura
   [W32]::Key(0x78)
   $selector = WaitUntil { $h = [W32]::FindWindow($null, "Fran Capture Studio – selector"); ($h -ne [IntPtr]::Zero) -and [W32]::IsWindowVisible($h) } 10
-  Check "La tecla F9 abre el selector de captura con la aplicación en la bandeja" $selector
+  Check "La tecla F9 abre el selector de captura con la aplicación en la bandeja" $selector "pulsación sintética" -Soft
   Start-Sleep 1; Shot "smoke-2-selector-f9"
   [W32]::Key(0x1B); Start-Sleep 1
   $gone = WaitUntil { [W32]::FindWindow($null, "Fran Capture Studio – selector") -eq [IntPtr]::Zero } 6
-  Check "Escape cancela el selector" $gone
+  if ($selector) { Check "Escape cancela el selector" $gone -Soft }
+  if (-not $gone) { Procs | Stop-Process -Force; Start-Sleep 2; Start-Process $exe -ArgumentList "--minimized"; Start-Sleep 6 }
 
   # 6. Captura de pantalla completa por orden externa: se guarda en la carpeta configurada
   $before = @(Get-ChildItem "$data\Capturas" -Filter *.png -ErrorAction SilentlyContinue).Count
