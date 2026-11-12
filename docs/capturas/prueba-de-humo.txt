@@ -1,0 +1,30 @@
+INFO   Firma digital del instalador: NotSigned (no se afirma que esté firmado)
+OK     El instalador se ejecuta y termina con código 0  [código 0]
+OK     Instala FranCaptureStudio.exe  [C:\Users\runneradmin\AppData\Local\Programs\Fran Capture Studio\FranCaptureStudio.exe]
+OK     Instala FFmpeg (ffmpeg\ffmpeg.exe)
+OK     Instala el runtime autocontenido (coreclr.dll)
+OK     Instala los avisos de licencias
+OK     Instala el desinstalador
+OK     El ejecutable declara producto, fabricante y versión  [Fran Capture Studio | Desarrollos Francisco J Vazquez Santiago | 1.0.0.0]
+OK     Acceso directo en el menú Inicio
+OK     Acceso directo en el escritorio (tarea opcional marcada en esta prueba)
+OK     No activa el inicio con Windows si no se pide
+OK     Registra la desinstalación con número de versión  [1.0.0]
+OK     El acceso directo apunta al ejecutable instalado  [C:\Users\runneradmin\AppData\Local\Programs\Fran Capture Studio\FranCaptureStudio.exe]
+OK     La aplicación inicia desde el acceso directo y muestra la ventana principal
+OK     Una segunda ejecución no crea procesos duplicados  [procesos: 1]
+OK     Cerrar la ventana deja el proceso activo en la bandeja
+OK     La ventana principal queda oculta
+NO VERIFICADO  La tecla F9 abre el selector de captura con la aplicación en la bandeja  [pulsación sintética]
+OK     Una captura se guarda como PNG en la carpeta de capturas  [Captura_2026-11-12_23-32-56.png 272599 bytes]
+OK     La captura tiene el tamaño del escritorio  [1024x768]
+OK     La base de datos de la biblioteca existe (SQLite)
+OK     La ventana se restaura desde el modo bandeja
+OK     «Salir completamente» termina el proceso
+OK     Tras salir, F9 ya no abre nada (atajos liberados)
+OK     La configuración persiste (F9 y región guardadas en settings.json)
+OK     El desinstalador termina con código 0
+OK     Elimina los archivos del programa
+OK     Elimina los accesos directos
+OK     No elimina capturas ni documentos personales
+OK     Conserva la configuración para futuras actualizaciones
