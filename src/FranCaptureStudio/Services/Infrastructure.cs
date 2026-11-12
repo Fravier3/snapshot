@@ -169,7 +169,14 @@ public sealed class SingleInstance : IDisposable
 
     public SingleInstance(string id)
     {
-        var suffix = Environment.GetEnvironmentVariable("FCS_DATA_DIR") is { Length: > 0 } d ? "-" + (uint)d.GetHashCode(StringComparison.OrdinalIgnoreCase) : "";
+        // Hash estable (FNV-1a): string.GetHashCode cambia en cada proceso y rompería la detección de la primera instancia.
+        string suffix = "";
+        if (Environment.GetEnvironmentVariable("FCS_DATA_DIR") is { Length: > 0 } d)
+        {
+            uint h = 2166136261;
+            foreach (char c in d.ToUpperInvariant()) h = (h ^ c) * 16777619;
+            suffix = "-" + h;
+        }
         _pipeName = id + "-" + Environment.UserName + suffix;
         _mutex = new Mutex(true, "Local\\" + _pipeName, out bool created);
         IsFirst = created;
