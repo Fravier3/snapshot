@@ -96,7 +96,7 @@ public static class Ffmpeg
             oh = sh & ~1; ow = (int)Math.Round(width * (double)oh / height) & ~1;
             vf = $"-vf scale={ow}:{oh}:flags=bicubic ";
         }
-        return $"-hide_banner -loglevel error -y -f rawvideo -pix_fmt bgra -video_size {width}x{height} -framerate {fps} -i pipe:0 " +
+        return $"-hide_banner -loglevel error -y -f rawvideo -pix_fmt bgr0 -video_size {width}x{height} -framerate {fps} -i pipe:0 " +
                $"{vf}{EncoderArgs(enc, ow, oh, fps, quality)} -r {fps} -f matroska -flush_packets 1 {Q(outputMkv)}";
     }
 
@@ -229,6 +229,22 @@ public static class Ffmpeg
         }
         return info;
     }
+
+    static readonly Regex DshowRx = new(@"\]\s+""(?<name>[^""]+)""\s+\((?<kind>video|audio|none)\)", RegexOptions.Compiled);
+
+    public const string ListDshowArgs = "-hide_banner -list_devices true -f dshow -i dummy";
+
+    /// <summary>Nombres de cámaras a partir de la salida de «-list_devices true -f dshow».</summary>
+    public static List<string> ParseDshowVideoDevices(string stderr)
+    {
+        var list = new List<string>();
+        foreach (Match m in DshowRx.Matches(stderr))
+            if (m.Groups["kind"].Value == "video" && !list.Contains(m.Groups["name"].Value)) list.Add(m.Groups["name"].Value);
+        return list;
+    }
+
+    public static string WebcamArgs(string device, int size) =>
+        $"-hide_banner -loglevel error -f dshow -i video={Q(device)} -vf \"scale={size}:{size}:force_original_aspect_ratio=increase,crop={size}:{size},hflip\" -r 20 -pix_fmt bgra -f rawvideo pipe:1";
 
     /// <summary>Lee «out_time_us=…» o «out_time_ms=…» de -progress y devuelve los segundos procesados.</summary>
     public static double? ParseProgressSeconds(string line)

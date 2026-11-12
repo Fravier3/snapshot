@@ -385,7 +385,7 @@ public class VideoTests
     public void Record_args_pipe_raw_frames_into_recoverable_container()
     {
         var a = Ffmpeg.RecordArgs(1920, 1080, 30, VideoEncoder.OpenH264, "high", null, @"C:\t\v.mkv");
-        Assert.Contains("-f rawvideo -pix_fmt bgra -video_size 1920x1080 -framerate 30 -i pipe:0", a);
+        Assert.Contains("-f rawvideo -pix_fmt bgr0 -video_size 1920x1080 -framerate 30 -i pipe:0", a);
         Assert.Contains("-c:v libopenh264", a); Assert.Contains("-f matroska", a); Assert.Contains("\"C:\\t\\v.mkv\"", a);
         Assert.DoesNotContain("scale=", a);
         var s = Ffmpeg.RecordArgs(2560, 1440, 60, VideoEncoder.Nvenc, "low", 720, "o.mkv");
@@ -471,6 +471,19 @@ public class VideoTests
         Assert.False(Ffmpeg.ParseMediaInfo("Stream #0:0: Video: h264, yuv420p, 640x480, 25 fps").HasAudio);
         Assert.Equal(2.5, Ffmpeg.ParseProgressSeconds("out_time_us=2500000"));
         Assert.Null(Ffmpeg.ParseProgressSeconds("frame=10"));
+    }
+
+    [Fact]
+    public void Dshow_devices_parsed()
+    {
+        const string err = """
+            [dshow @ 000001] "Integrated Camera" (video)
+            [dshow @ 000001]   Alternative name "@device_pnp_x"
+            [dshow @ 000001] "OBS Virtual Camera" (none)
+            [dshow @ 000001] "Micrófono (Realtek)" (audio)
+            """;
+        Assert.Equal(["Integrated Camera"], Ffmpeg.ParseDshowVideoDevices(err));
+        Assert.Contains("video=\"Integrated Camera\"", Ffmpeg.WebcamArgs("Integrated Camera", 240));
     }
 
     [Fact]
