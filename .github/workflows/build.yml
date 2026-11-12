@@ -70,6 +70,8 @@ jobs:
           New-Item -ItemType Directory -Force docs\capturas | Out-Null
           Copy-Item artifacts\ui\*.png docs\capturas -Force
           if (Test-Path artifacts\smoke-results.txt) { Copy-Item artifacts\smoke-results.txt docs\capturas\prueba-de-humo.txt -Force }
+          Get-ChildItem $env:TEMP -Filter "fcs-tests-*" -Directory -ErrorAction SilentlyContinue | ForEach-Object { if (Test-Path "$($_.FullName)\omitidas.txt") { Copy-Item "$($_.FullName)\omitidas.txt" docs\capturas\pruebas-omitidas.txt -Force } }
+          ./build/ci-diagnose.ps1 *>&1 | Where-Object { "$_" -match '^(TRX|  INFO|OMITIDA|SETUP)' } | Set-Content docs\capturas\resumen-pruebas.txt -Encoding UTF8
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/capturas
