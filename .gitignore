@@ -1,0 +1,8 @@
+bin/
+obj/
+artifacts/
+publish/
+third_party/ffmpeg/
+*.user
+.vs/
+TestResults/
