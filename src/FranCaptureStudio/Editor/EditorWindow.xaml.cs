@@ -699,6 +699,34 @@ public partial class EditorWindow : StudioWindow
         return true;
     }
 
+    bool _capturingAgain;
+
+    /// <summary>«Hacer otra captura»: oculta el editor, abre el selector de región y, si se captura, abre la nueva imagen.</summary>
+    async void NewCapture_Click(object sender, RoutedEventArgs e)
+    {
+        if (_capturingAgain || Studio.Capture.IsBusy) return;
+        _capturingAgain = true;
+        CommitText();
+        bool mainWasVisible = Studio.Main is { IsVisible: true } && Studio.Main.WindowState != WindowState.Minimized;
+        try
+        {
+            Hide();
+            if (mainWasVisible) Studio.Main!.Hide();
+            await Task.Delay(260); // que Windows repinte lo que había debajo
+            var r = await Studio.Capture.CaptureAsync(new CaptureRequest { Mode = FranCaptureStudio.Capture.CaptureMode.Region, OpenEditor = true });
+            bool captured = r.Image != null && !r.Cancelled;
+            if (captured && !_dirty) { Close(); return; }   // sin cambios pendientes: este editor ya no hace falta
+            Show();                                          // cancelado, o con cambios sin guardar: se conserva
+            if (!captured) Activate();
+        }
+        catch (Exception ex) { Log.Error("Hacer otra captura", ex); Show(); }
+        finally
+        {
+            if (mainWasVisible && Studio.Main is { IsVisible: false }) Studio.Main.Show();
+            _capturingAgain = false;
+        }
+    }
+
     void Copy_Click(object sender, RoutedEventArgs e)
     {
         bool ok = ClipboardService.SetImage(Flatten());

@@ -24,6 +24,8 @@ public static class W32 {
   [DllImport("user32.dll")] public static extern void keybd_event(byte vk, byte scan, uint flags, UIntPtr extra);
   [DllImport("user32.dll", CharSet=CharSet.Unicode)] public static extern IntPtr FindWindow(string cls, string title);
   [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr h);
+  [StructLayout(LayoutKind.Sequential)] public struct RECT { public int Left, Top, Right, Bottom; }
+  [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out RECT r);
   public static void Key(byte vk) { keybd_event(vk, 0, 0, UIntPtr.Zero); keybd_event(vk, 0, 2, UIntPtr.Zero); }
 }
 "@
@@ -90,6 +92,13 @@ if (Test-Path $startLnk) {
   $started = WaitUntil { (Procs).Count -ge 1 -and (Procs | Where-Object { $_.MainWindowTitle -eq "Fran Capture Studio" }) } 40
   Check "La aplicación inicia desde el acceso directo y muestra la ventana principal" $started
   Start-Sleep 2; Shot "smoke-1-principal"
+  $mw = Procs | Where-Object { $_.MainWindowTitle -eq "Fran Capture Studio" } | Select-Object -First 1
+  if ($mw) {
+    $rc = New-Object W32+RECT; [void][W32]::GetWindowRect($mw.MainWindowHandle, [ref]$rc)
+    $wa = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea
+    $inside = ($rc.Left -ge $wa.Left) -and ($rc.Top -ge $wa.Top) -and ($rc.Right -le $wa.Right) -and ($rc.Bottom -le $wa.Bottom)
+    Check "La ventana principal cabe completa en la pantalla" $inside "ventana $($rc.Left),$($rc.Top)-$($rc.Right),$($rc.Bottom) en área $($wa.Width)x$($wa.Height)"
+  }
 
   # 3. Instancia única
   Start-Process $exe; Start-Sleep 4

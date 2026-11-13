@@ -664,6 +664,56 @@ public class IntegrationTests(UiFixture ui, ITestOutputHelper output)
     // --- Interfaz ---
 
     [Fact]
+    public void Windows_never_exceed_the_screen_and_restore_to_a_moderate_size()
+    {
+        ui.RunAsync(async () =>
+        {
+            foreach (var make in new Func<StudioWindow>[] { () => new MainWindow(), () => EditorWindow.Open(Solid(3000, 2000, Colors.White), null) })
+            {
+                var w = make();
+                if (w is MainWindow m) { Studio.Main = m; }
+                w.Width = 6000; w.Height = 4000; w.Left = -500; w.Top = -300; // tamaño y posición absurdos
+                w.Show();
+                await Task.Delay(400);
+                var wa = System.Windows.Forms.Screen.FromHandle(Ui.Handle(w)).WorkingArea;
+                void AssertInside(string when)
+                {
+                    var b = Ui.PhysicalBounds(w);
+                    output.WriteLine($"{w.GetType().Name} {when}: {b} dentro de {wa}");
+                    Assert.True(b.Width <= wa.Width && b.Height <= wa.Height, $"{when}: la ventana es mayor que la pantalla ({b.Size} > {wa.Size})");
+                    Assert.True(b.Left >= wa.Left && b.Top >= wa.Top && b.Right <= wa.Right && b.Bottom <= wa.Bottom, $"{when}: la ventana se sale de la pantalla ({b})");
+                }
+                AssertInside("al abrir");
+                w.WindowState = WindowState.Maximized; await Task.Delay(400);
+                w.WindowState = WindowState.Normal; await Task.Delay(500);
+                AssertInside("al restaurar desde maximizada");
+                var restored = Ui.PhysicalBounds(w);
+                Assert.True(restored.Width <= wa.Width * 0.95 && restored.Height <= wa.Height * 0.95, "al restaurar debe quedar un tamaño moderado, no toda la pantalla");
+                w.WindowState = WindowState.Minimized; await Task.Delay(300);
+                w.WindowState = WindowState.Normal; await Task.Delay(400);
+                AssertInside("al restaurar desde minimizada");
+                Studio.IsExitingForRender = true;
+                w.Close();
+                Studio.IsExitingForRender = false;
+                Studio.Main = null;
+            }
+        });
+    }
+
+    [Fact]
+    public void Editor_has_a_take_another_capture_button()
+    {
+        ui.Run(() =>
+        {
+            var ed = EditorWindow.Open(Solid(200, 100, Colors.White), null);
+            var btn = (System.Windows.Controls.Button)ed.FindName("NewCaptureBtn");
+            Assert.NotNull(btn);
+            Assert.True(btn.IsEnabled && btn.IsVisible);
+            Studio.IsExitingForRender = true; ed.Close(); Studio.IsExitingForRender = false;
+        });
+    }
+
+    [Fact]
     public void Main_window_builds_every_page_in_both_themes_and_languages()
     {
         ui.RunAsync(async () =>

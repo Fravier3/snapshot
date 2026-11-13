@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:v="clr-namespace:FranCaptureStudio.Views"
         xmlns:l="clr-namespace:FranCaptureStudio"
-        Title="Fran Capture Studio – Editor de video" Width="1120" Height="800" MinWidth="820" MinHeight="560"
+        Title="Fran Capture Studio – Editor de video" Width="1060" Height="720" MinWidth="760" MinHeight="500"
         WindowStartupLocation="CenterScreen">
   <Grid>
     <Grid.RowDefinitions>

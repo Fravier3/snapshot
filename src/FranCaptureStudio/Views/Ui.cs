@@ -25,11 +25,81 @@ public class StudioWindow : Window
         try { Icon = System.Windows.Media.Imaging.BitmapFrame.Create(new Uri("pack://application:,,,/FranCaptureStudio;component/Assets/app.ico")); } catch { }
     }
 
+    /// <summary>Si es true (por defecto), la ventana nunca queda más grande que la pantalla ni fuera de ella.</summary>
+    public bool KeepOnScreen { get; set; } = true;
+
     protected override void OnSourceInitialized(EventArgs e)
     {
         base.OnSourceInitialized(e);
         Studio.ThemeWindow(this);
         if (HideFromCapture) Native.ExcludeFromCapture(new WindowInteropHelper(this).Handle);
+        FitToScreen();
+        Loaded += (_, _) => FitToScreen();
+        StateChanged += (_, _) => Dispatcher.BeginInvoke(new Action(FitToScreen), System.Windows.Threading.DispatcherPriority.Loaded);
+        DpiChanged += (_, _) => Dispatcher.BeginInvoke(new Action(FitToScreen), System.Windows.Threading.DispatcherPriority.Loaded);
+    }
+
+    /// <summary>
+    /// Limita tamaño y posición al área de trabajo del monitor donde está la ventana (teniendo en cuenta el escalado),
+    /// para que al restaurarla desde maximizada quede con un tamaño moderado y completamente visible.
+    /// </summary>
+    public void FitToScreen()
+    {
+        try
+        {
+            if (!KeepOnScreen || WindowState != WindowState.Normal || SizeToContent != SizeToContent.Manual || ResizeMode == ResizeMode.NoResize) return;
+            var h = new WindowInteropHelper(this).Handle;
+            if (h == IntPtr.Zero) return;
+            var wa = System.Windows.Forms.Screen.FromHandle(h).WorkingArea; // píxeles físicos
+            uint dpi = Native.GetDpiForWindow(h);
+            double scale = dpi > 0 ? dpi / 96.0 : 1.0;
+            double waW = wa.Width / scale, waH = wa.Height / scale;
+            if (waW < 200 || waH < 200) return;
+            double maxW = Math.Floor(waW * 0.94), maxH = Math.Floor(waH * 0.94);
+            if (MinWidth > maxW) MinWidth = maxW;
+            if (MinHeight > maxH) MinHeight = maxH;
+            double w = double.IsNaN(Width) ? ActualWidth : Width, ht = double.IsNaN(Height) ? ActualHeight : Height;
+            if (w > maxW) { Width = maxW; w = maxW; }
+            if (ht > maxH) { Height = maxH; ht = maxH; }
+            // posición en píxeles físicos para no depender del DPI del monitor principal
+            if (!Native.GetWindowRect(h, out var r)) return;
+            int pw = (int)Math.Round(w * scale), ph = (int)Math.Round(ht * scale);
+            int x = r.Left, y = r.Top;
+            if (x + pw > wa.Right) x = wa.Right - pw;
+            if (y + ph > wa.Bottom) y = wa.Bottom - ph;
+            if (x < wa.Left) x = wa.Left;
+            if (y < wa.Top) y = wa.Top;
+            if (x != r.Left || y != r.Top) Native.SetWindowPos(h, IntPtr.Zero, x, y, 0, 0, Native.SWP_NOSIZE | Native.SWP_NOZORDER | Native.SWP_NOACTIVATE);
+        }
+        catch { }
+    }
+
+    protected override void OnPreviewKeyDown(System.Windows.Input.KeyEventArgs e)
+    {
+        base.OnPreviewKeyDown(e);
+        if (e.Handled || e.OriginalSource is System.Windows.Controls.TextBox) return;
+        // Respaldo: si un atajo no pudo registrarse globalmente (otra aplicación lo usa), al menos funciona dentro de nuestras ventanas.
+        try
+        {
+            var key = e.Key == System.Windows.Input.Key.System ? e.SystemKey : e.Key;
+            int vk = System.Windows.Input.KeyInterop.VirtualKeyFromKey(key);
+            if (vk == 0) return;
+            var mods = FranCapture.Core.Hotkeys.HotkeyModifiers.None;
+            var k = System.Windows.Input.Keyboard.Modifiers;
+            if ((k & System.Windows.Input.ModifierKeys.Control) != 0) mods |= FranCapture.Core.Hotkeys.HotkeyModifiers.Ctrl;
+            if ((k & System.Windows.Input.ModifierKeys.Alt) != 0) mods |= FranCapture.Core.Hotkeys.HotkeyModifiers.Alt;
+            if ((k & System.Windows.Input.ModifierKeys.Shift) != 0) mods |= FranCapture.Core.Hotkeys.HotkeyModifiers.Shift;
+            var pressed = new FranCapture.Core.Hotkeys.HotkeyGesture(mods, vk).ToString();
+            foreach (var kv in Studio.Settings.Hotkeys)
+            {
+                if (kv.Value != pressed || !Enum.TryParse<FranCapture.Core.Hotkeys.HotkeyAction>(kv.Key, out var action)) continue;
+                if (Studio.Hotkeys.Registered.ContainsKey(action) || this is HotkeyCaptureWindow) return; // ya lo atiende Windows
+                e.Handled = true;
+                Studio.Execute(action);
+                return;
+            }
+        }
+        catch { }
     }
 }
 

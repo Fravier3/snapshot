@@ -24,12 +24,6 @@ public partial class MainWindow : StudioWindow
     public MainWindow()
     {
         InitializeComponent();
-        // En pantallas pequeñas la ventana no debe exceder el área de trabajo.
-        var wa = SystemParameters.WorkArea;
-        Width = Math.Min(Width, Math.Max(MinWidth, wa.Width - 24));
-        Height = Math.Min(Height, Math.Max(MinHeight, wa.Height - 24));
-        if (MinWidth > wa.Width) MinWidth = Math.Max(480, wa.Width);
-        if (MinHeight > wa.Height) MinHeight = Math.Max(360, wa.Height);
         _pages = new()
         {
             ["dashboard"] = (NavDashboard, DashboardPage, "Inicio"),

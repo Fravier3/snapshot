@@ -4,7 +4,7 @@
         xmlns:v="clr-namespace:FranCaptureStudio.Views"
         xmlns:l="clr-namespace:FranCaptureStudio"
         xmlns:e="clr-namespace:FranCaptureStudio.Editor"
-        Title="Fran Capture Studio – Editor" Width="1180" Height="780" MaxWidth="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}" MinWidth="760" MinHeight="480"
+        Title="Fran Capture Studio – Editor" Width="1100" Height="720" MinWidth="700" MinHeight="440"
         WindowStartupLocation="CenterScreen">
   <Grid>
     <Grid.RowDefinitions>
@@ -31,6 +31,9 @@
           </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+          <Button x:Name="NewCaptureBtn" Style="{StaticResource SecondaryButton}" Click="NewCapture_Click" Margin="0,0,14,0" ToolTip="{l:T 'Vuelve al selector de región para hacer una captura nueva'}">
+            <StackPanel Orientation="Horizontal"><TextBlock Style="{StaticResource Icon}" Text="&#xE7A8;" Margin="0,0,7,0" FontSize="14" Foreground="{DynamicResource AccentBrush}"/><TextBlock Text="{l:T 'Hacer otra captura'}"/></StackPanel>
+          </Button>
           <Button Style="{StaticResource SecondaryButton}" Click="Copy_Click" Margin="0,0,6,0" ToolTip="Ctrl+C">
             <StackPanel Orientation="Horizontal"><TextBlock Style="{StaticResource Icon}" Text="&#xE8C8;" Margin="0,0,7,0" FontSize="14"/><TextBlock Text="{l:T 'Copiar'}"/></StackPanel>
           </Button>

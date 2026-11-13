@@ -150,7 +150,7 @@ public static class Studio
         switch (action)
         {
             case HotkeyAction.OpenApp: ShowMain(); break;
-            case HotkeyAction.CaptureRegion: _ = Capture.CaptureAsync(new CaptureRequest { Mode = CaptureMode.Region }); break;
+            case HotkeyAction.CaptureRegion: _ = Capture.CaptureAsync(new CaptureRequest { Mode = CaptureMode.Region, FromUi = Main is { IsVisible: true, IsActive: true } }); break;
             case HotkeyAction.CaptureFullScreen: _ = Capture.CaptureAsync(new CaptureRequest { Mode = CaptureMode.FullScreen }); break;
             case HotkeyAction.CaptureActiveWindow: _ = Capture.CaptureAsync(new CaptureRequest { Mode = CaptureMode.ActiveWindow }); break;
             case HotkeyAction.RepeatLastRegion: _ = Capture.CaptureAsync(new CaptureRequest { Mode = CaptureMode.LastRegion }); break;

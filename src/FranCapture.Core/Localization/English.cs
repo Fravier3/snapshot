@@ -668,5 +668,7 @@ public static partial class English
         ["★ Favorito"] = "★ Favorite",
         ["☆ Favorito"] = "☆ Favorite",
         ["Sin conexión, las grabaciones y capturas permanecen en este equipo."] = "Offline: recordings and captures stay on this PC.",
+        ["Hacer otra captura"] = "Take another capture",
+        ["Vuelve al selector de región para hacer una captura nueva"] = "Go back to the region selector to take a new capture",
     };
 }

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:v="clr-namespace:FranCaptureStudio.Views"
         xmlns:l="clr-namespace:FranCaptureStudio"
-        Title="Fran Capture Studio" Width="1180" Height="760" MinWidth="820" MinHeight="520"
+        Title="Fran Capture Studio" Width="1060" Height="690" MinWidth="760" MinHeight="480"
         WindowStartupLocation="CenterScreen">
   <Grid>
     <Grid.ColumnDefinitions>

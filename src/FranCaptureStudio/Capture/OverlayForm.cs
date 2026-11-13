@@ -113,10 +113,15 @@ public sealed class OverlayForm : WF.Form
     protected override void OnDeactivate(EventArgs e)
     {
         base.OnDeactivate(e);
-        // Si otra ventana roba el foco, el selector se cancela para no dejar la pantalla bloqueada.
-        if (Visible && !_closing) BeginInvoke(() => { if (!_closing && WF.Form.ActiveForm != this) Finish(OverlayAction.Cancel); });
+        // Si al aparecer otra ventana se queda con el foco, se reclama el primer plano (sin cancelar la selección).
+        if (Visible && !_closing && _reclaims < 3)
+        {
+            _reclaims++;
+            BeginInvoke(() => { if (!_closing && Visible) { Native.SetForegroundWindow(Handle); Activate(); } });
+        }
     }
 
+    int _reclaims;
     bool _closing;
 
     new double Scale => Native.ScaleAt(_mouse.X + _vb.X, _mouse.Y + _vb.Y);
