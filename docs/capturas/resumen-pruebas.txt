@@ -1,13 +1,13 @@
 TRX core.trx: total=70 ok=70 fallidas=0
 TRX windows.trx: total=22 ok=22 fallidas=0
-  INFO Record_gif_and_webm: GIF: 320x213 1.50s, 85476 bytes WebM: 480x320 1.50s, codificador libvpx-vp9
-  INFO Record_pause_resume_stop_produces_playable_mp4: MP4: 480x320 3.00s 30fps, codificador libopenh264, 90 fotogramas, 68091 bytes
-  INFO Configured_key_really_opens_the_capture_selector: SendInput devolvió 8 (error 0); se reintenta con keybd_event
   INFO Video_editor_exports_trimmed_split_video_with_overlay_and_gif: Editado: 2.00s (esperado 2.00)
-  INFO Interrupted_recording_is_recovered: Recuperado: 2.00s
-  INFO Screen_capture_returns_real_pixels_of_a_visible_window: Píxel central: R255 G0 B255
+  INFO Configured_key_really_opens_the_capture_selector: SendInput devolvió 8 (error 0); se reintenta con keybd_event
+  INFO Own_tool_windows_are_excluded_from_capture: Píxel central con exclusión: R183 G183 B183
   INFO Global_hotkey_registers_fires_and_unregisters: SendInput devolvió 8 (error 0); se reintenta con keybd_event
-  INFO Own_tool_windows_are_excluded_from_capture: Píxel central con exclusión: R12 G12 B12
+  INFO Record_gif_and_webm: GIF: 320x213 1.50s, 88219 bytes WebM: 480x320 1.50s, codificador libvpx-vp9
   INFO Ocr_returns_recognizable_text: Idiomas OCR instalados: en-US Texto reconocido: Fran Capture Studio 2026 | https://example.com/prueba
+  INFO Interrupted_recording_is_recovered: Recuperado: 2.00s
+  INFO Record_pause_resume_stop_produces_playable_mp4: MP4: 480x320 3.00s 30fps, codificador libopenh264, 90 fotogramas, 68092 bytes
+  INFO Screen_capture_returns_real_pixels_of_a_visible_window: Píxel central: R255 G0 B255
 OMITIDA Global_hotkey_registers_fires_and_unregisters: el registro y el conflicto se comprobaron, pero este entorno no entrega pulsaciones sintéticas al sistema (sin escritorio de entrada interactivo); el disparo real se verifica en la prueba de humo o manualmente
 SETUP: 102.8 MB

@@ -16,7 +16,7 @@ OK     Una segunda ejecución no crea procesos duplicados  [procesos: 1]
 OK     Cerrar la ventana deja el proceso activo en la bandeja
 OK     La ventana principal queda oculta
 NO VERIFICADO  La tecla F9 abre el selector de captura con la aplicación en la bandeja  [pulsación sintética]
-OK     Una captura se guarda como PNG en la carpeta de capturas  [Captura_2026-11-12_23-50-43.png 268022 bytes]
+OK     Una captura se guarda como PNG en la carpeta de capturas  [Captura_2026-11-13_00-01-17.png 269415 bytes]
 OK     La captura tiene el tamaño del escritorio  [1024x768]
 OK     La base de datos de la biblioteca existe (SQLite)
 OK     La ventana se restaura desde el modo bandeja
